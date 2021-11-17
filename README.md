@@ -34,7 +34,7 @@ Aby sprawdzić czy alpine4 ma ograniczoną ilość pamięci RAM zgodnie z treśc
 ```docker inspect alpine4```
 W informacji zwrotnej można znaleźć taką informacje:<br />
 ![Podpunkt5-2-3](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-3.png)<br />
-536870912 bitów to 512 MB. Więc wykazaliśmy, że alpine4 ma ograniczonąilość pamięci RAM.
+536870912 bajtów to 512 MB. Więc wykazaliśmy, że alpine4 ma ograniczoną ilość pamięci RAM.
 
 <b>Podpunkt 6</b> <br />
 W celu możliwości użycia narzędzia CADVISOR, kontener alpine4 musi być cały czas uruchomiony. W tym celu na potrzebe tego podpunktu, używam w skrypcie plute.sh komendy ```while true; do sleep 1000; done```.
