@@ -38,4 +38,27 @@ W informacji zwrotnej można znaleźć taką informacje:<br />
 536870912 bitów to 512 MB. Więc wykazaliśmy, że alpine4 ma ograniczonąilość pamięci RAM.
 
 <b>Podpunkt 6</b> <br />
+W celu możliwości użycia narzędzia CADVISOR, konener alpine4 musi być cały czas uruchomiony. W tym celu na potrzebe tego podpunktu, używam w skrypcie plute.sh komendy ```while true; do sleep 1000; done```.
+Uruchamiamy CADBISOR komendą:
+```
+sudo docker run \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:ro \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --volume=/dev/disk/:/dev/disk:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  --privileged \
+  --device=/dev/kmsg \
+  gcr.io/cadvisor/cadvisor:v0.36.0
+  ```
+  Wchodzimy na przeglądarce na "localhost:8080", klikamy "Docker Containers", następnie wybieramy w kategorii Subcontainers "alpine4". Na wyświetlonej podstronie możemy uzyskać informacje o ograniczonej ilości pamięci RAM:
+ ![Podpunkt6](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-4.png)<br />
+6. Jeśli do wykonania punktu 5 użyty zostanie (poza narzędziami z konsoli) narzędzie CADVISOR,
+będzie to podstawą do przyznania dodatkowych punktów za sprawozdania.
+W   sprawozdaniu   należy   przedstawić   opracowany   skrypt,   plik   Dockerfile   oraz   treść   i   wynik
+wszystkich   użytych   poleceń   wraz   z   wynikiem   ich   działania.   Poszczególne   kroki   należu   krótko
+opisać a jeśli to konieczne, to skomentować. 
 
