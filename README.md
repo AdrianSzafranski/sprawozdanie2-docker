@@ -38,7 +38,7 @@ W informacji zwrotnej można znaleźć taką informacje:<br />
 
 <b>Podpunkt 6</b> <br />
 W celu możliwości użycia narzędzia CADVISOR, kontener alpine4 musi być cały czas uruchomiony. W tym celu na potrzebe tego podpunktu, używam w skrypcie plute.sh komendy ```while true; do sleep 1000; done```.
-Uruchamiamy CADBISOR komendą:
+Uruchamiamy CADVISOR komendą:
 ```
 sudo docker run \
   --volume=/:/rootfs:ro \
