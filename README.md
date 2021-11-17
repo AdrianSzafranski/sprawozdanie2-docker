@@ -19,13 +19,14 @@ kontenera
 <b>Podpunkt 5</b> <br />
 
 <b>a</b><br />
-Komendą ```docker inspect alpine4 | jq '.[] .Mounts'``` sprawdzimy miejsce montowania wolumenu oraz miejsce montowania w kontenerze. 
+Komendą ```docker inspect alpine4 | jq '.[] .Mounts'``` sprawdzimy miejsce montowania wolumenu oraz miejsce montowania w kontenerze.<br />
+![Podpunkt5](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-5.png)<br />
 1. Sprawdzenie czy skrypt pluto.sh zapisuje w kontenerze dane do pliku /logi/info.log.
 W tym celu, na potrzebe tego podpunktu używamy w skrypcie komendy ```cat /logi/info.log```, która wypisuje w terminalu zawartość pliku. Wyświetlona została poprawna zawartość, więc wiemy, że skrypt pluto.sh zapisuje poprawne dane w porządanym katalogu.<br />
-![Podpunkt5-1](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-0.png)<br />
+![Podpunkt5-1](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-6.png)<br />
 2. Sprawdzenie czy skrypt pluto.sh generuje wymagane dane i umieszcza je w pliku info.log na wolumenie.
 W tym celu, używamy ściężki montowania wolumenu do sprawdzenia czy istnieje plik "info.log" oraz jaką ma zawartość.
-![Podpunkt5-2-2](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-2.png)<br />
+![Podpunkt5-2-2](https://github.com/AdrianSzafranski/chmurki/blob/main/spr2-7.png)<br />
 Na powyższym screenie można zauważyć, że pluto.sh poprawnie wygenerował dane i umieścił je w pliku info.log na wolumenie.
 
 <b>b</b><br />
